@@ -43,7 +43,7 @@ class UI {
     generarElemento(item) {
         const contenido = document.querySelector('.content__box')
         const box = document.createElement('a')
-        box.href = `../country/?country=${item.name.common}?fullText=true`;
+        box.href = `./country/?country=${item.name.common}?fullText=true`;
         box.classList.add('content__country', 'country')
         box.innerHTML = this.generarHTML(item)
 
