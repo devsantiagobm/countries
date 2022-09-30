@@ -1,0 +1,13 @@
+@use '../base/base' as *;
+@use '../header/header' as *;
+@use '../content/content' as *;
+
+@media screen and (max-width: 972px){
+    @include base-972();
+    @include header-phone();
+    @include content-972();
+}
+
+@media screen  and (max-width: 582px){
+    @include content-582()
+}

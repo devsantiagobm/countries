@@ -1,0 +1,61 @@
+@use '../assets/assets' as *;
+
+body{
+    max-width: 100vw;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: $light;
+    background-color: var(--background);
+}
+
+.main{
+    padding: 24px 5vw;
+}
+
+.mensaje{
+    color: var(--dark-text);
+    background-color: rgb(197, 7, 7);
+    position: fixed;
+    bottom:24px;
+    right: 24px;
+    z-index: 1;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: $bold;
+    transform: translateY(100px);
+    transition: transform .8s ease;
+    box-shadow: 0 0 50px -15px var(--text);
+
+    &--active{
+        transform: translateY(0px);
+    }
+}
+
+.modal{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background-color: var(--background);
+    min-height: 100vh;
+    @include center();
+}
+
+.modal--hidden{
+    animation: modal 1s linear both;
+}
+
+@keyframes modal {
+    from{
+        visibility: visible;
+        opacity: 1;
+    }
+    to{
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+@mixin base-phone(){
+    .main{
+        padding: 24px 10vw;
+    }
+}

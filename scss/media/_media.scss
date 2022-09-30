@@ -1,0 +1,11 @@
+@use '../header/header' as *;
+@use '../form/form' as *;
+@use '../content/content' as *;
+@use '../base/base' as *;
+
+@media screen and (max-width: 650px){
+    @include header-phone();
+    @include form-phone();
+    @include content-phone();
+    @include base-phone();
+}

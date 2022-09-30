@@ -1,0 +1,192 @@
+@use '../assets/assets' as *;
+
+.content{
+    width: 100%;
+    margin: 48px 0 0;
+    @include center();
+    &__box{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 80px;
+    }
+
+    &__title{
+        font-size: 1.5rem;
+    }
+
+    &__image{
+        min-width: 45%;
+        @include center();
+    }
+
+    &__data{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 40px;
+        color: var(--text);
+        width: 50%;
+    }
+
+    &__line{
+        font-size: .8rem;
+        font-weight: $bold;
+        overflow: hidden;
+    }
+
+    &__regular{
+        font-weight: $light;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__columns{
+        display: flex;
+        gap: 8vw;
+    }
+
+    &__currencie, &__info{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        max-width: 40%;
+    }
+
+    &__line{
+        display: flex;
+        gap: 4px;
+        white-space: nowrap;
+    }
+
+    &__border{
+        display: flex;
+        gap: 16px;
+        font-weight: $bold;
+        align-items: center;
+    }
+
+    &__list{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 107px);
+        gap: 8px;
+        font-weight: $light;
+        font-size: .8rem;
+    }
+
+    &__item{
+        @include center();
+        background-color: var(--elements);
+        padding: 8px 24px;
+        box-shadow: 0 0 25px -3px var(--elements);
+        border-radius: 4px;
+        overflow: hidden;
+
+        & > span{
+            max-width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &__flag{
+        background-color: red;
+        aspect-ratio: 1.7/1;
+        max-width: 90%;
+        overflow: hidden;
+        & > img{
+            background-color: red;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+}
+
+@mixin content-972(){
+    .content{
+
+        &__box{
+            flex-direction: column;
+        }
+
+        &__image{
+            min-width: 100%;
+        }
+        &__data{
+            min-width: 100%;
+        }
+
+        &__currencie, &__info{
+            max-width: 50%;
+        }
+    }
+}
+
+@mixin content-582(){
+    .content{
+        &__columns{
+            flex-direction: column;
+        }
+
+        &__currencie, &__info{
+            gap: 12px;
+        }
+
+        &__border{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &__list{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 120px);
+        }
+
+        &__item{
+            padding: 8px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            @include center();
+        }
+
+        &__data{
+            width: 100%;
+        }
+
+        &__image{
+            width: 100%;
+            overflow: hidden;
+        }
+
+        &__flag{
+            width: 100%;
+            @include center();
+            
+            & > img{
+                width: 100%;
+            }
+        }
+
+        &__currencie, &__info{
+            max-width: 100%;
+        }
+
+
+        &__regular{
+            max-width: calc(100vw - 64px - 78px);
+        }
+    }   
+}
+
+.opacity{
+    opacity: 0.1;
+}

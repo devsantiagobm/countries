@@ -1,0 +1,225 @@
+@use '../assets/assets' as *;
+
+.form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 32px;
+    
+    &__label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        gap: 24px;
+        padding: 16px 20px;
+        background-color: var(--elements);
+        border-radius: 8px;
+        color: var(--text);
+        font-weight: $regular;
+        position: relative;
+        border: solid 1px transparent;
+
+        &--vacio {
+            animation: shake .5s ease;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0)
+            }
+
+            25% {
+                transform: translateX(5px)
+            }
+
+            50% {
+                transform: translateX(-5px)
+            }
+
+            75% {
+                transform: translateX(5px)
+            }
+
+            100% {
+                transform: translateX(0)
+            }
+        }
+
+    }
+
+    &__loader {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        display: grid;
+        place-items: center;
+        left: calc(100% + 16px);
+        opacity: 0;
+        transition: opacity .4s ease;
+        cursor: default;
+
+        &--active {
+            opacity: 1;
+        }
+
+        &--filter{
+            left: unset;
+            right: calc(100% + 16px);
+        }
+    }
+
+    &__picture {
+        max-width: 16px;
+        @include center();
+    }
+
+    &__icon{
+        max-width: 16px;
+        max-height: 16px;
+    }
+
+    &__country {
+        outline: none;
+        cursor: pointer;
+        min-width: 23vw;
+        background-color: transparent;
+        @include center();
+
+        &::placeholder {
+            color: var(--text);
+            filter: brightness(70%);
+            font-size: .95rem;
+        }
+    }
+
+    &__arrow {
+        max-width: 16px;
+        transition: rotate .2s ease;
+    }
+
+    &__select {
+        background-color: var(--elements);
+        user-select: none;
+        cursor: pointer;
+        color: var(--text);
+        position: relative;
+        font-size: .95rem;
+        border-radius: 8px;
+    }
+
+    &__accordion {
+        line-height: 0rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        align-items: center;
+        padding: 12px 24px;
+        font-weight: $regular;
+        height: 100%;
+    }
+
+    &__options {
+        position: absolute;
+        box-shadow:
+            rgba(255, 255, 255, 0.5) 0px 1px 1px 0px inset,
+            rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.5) 0px 30px 60px -30px;
+        width: 100%;
+        font-weight: $regular;
+        top: 110%;
+        border-radius: 8px;
+        overflow: hidden;
+        transform: scaleY(0);
+        transform-origin: top;
+        overflow: hidden;
+        z-index: 1;
+        transition: transform .3s ease;
+        
+        &--active{
+            transform: scaleY(100%);
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    &__item {
+        padding: 10px 24px;
+        background-color: var(--elements);
+        transition: filter .2s ease;
+        display: flex;
+        align-items: center;
+        line-height: 1rem;
+
+        @media (hover: hover) {
+            &:hover {
+                filter: brightness(115%);
+            }
+        }
+
+
+        &:first-child {
+            padding: 16px 24px 10px;
+        }
+
+        &:last-child {
+            padding: 10px 24px 16px;
+
+        }
+    }
+}
+
+.loader {
+    $size: 24px;
+    width: $size;
+    height: $size;
+    border: 2px dotted var(--text);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 2s linear infinite;
+
+    &--modal {
+        $size: 40px;
+        width: $size;
+        height: $size;
+        animation-duration: 1.5s;
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@mixin form-phone(){
+    .form{
+        flex-direction: column;
+        gap: 24px;
+
+        &__accordion{
+            padding: 20px 24px;
+        }
+
+        &__loader{
+            left: unset;
+            right: 24px;
+            &--filter{
+                right: 54px;
+            }
+        }
+    }
+
+    .loader{
+        border-width: 3px;
+    }
+}

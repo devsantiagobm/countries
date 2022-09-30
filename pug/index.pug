@@ -1,0 +1,49 @@
+include regions.pug
+
+doctype html
+html(lang="en" translate="no" class="notranslate")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="google" content="notranslate")
+        title Countries App
+
+        link(rel='preconnect', href='https://fonts.googleapis.com')
+        link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin='')
+        link(href='https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap', rel='stylesheet')
+
+        link(rel="stylesheet", href="src/style.css")
+
+        script(src="src/script.js" defer type="module") 
+    body 
+        .modal 
+            span.loader.loader--modal
+        .mensaje Country not found
+        header.header 
+            a(href="#").header__title Where in the world?
+            .header__mode 
+                picture.header__picture 
+                    img(src="assets/dark.svg", alt="mode icon").header__icon
+                span.header__mode-text Dark mode
+        main.main 
+            form(action="#" method="GET").form
+                label.form__label(for="country")
+                    picture.form__picture 
+                        include svg/search.pug
+                    input(type="text" id="country" name="country" placeholder="Search for a country..." autocomplete="off").form__country
+                    .form__loader.form__loader--search
+                        span.loader
+                .form__select 
+                    .form__accordion    
+                        span Filter by Region 
+                        picture.form__picture.form__arrow 
+                            include svg/arrow.pug
+                        .form__loader.form__loader--filter
+                            span.loader
+                    .form__options
+                        ul.form__list
+                            each item in regions 
+                                li.form__item= item
+            .content
+                .content__box 

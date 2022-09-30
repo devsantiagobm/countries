@@ -1,0 +1,37 @@
+
+doctype html
+html(lang="en" translate="no" class="notranslate")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="google" content="notranslate")
+        title Countries App
+
+        link(rel='preconnect', href='https://fonts.googleapis.com')
+        link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin='')
+        link(href='https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap', rel='stylesheet')
+
+        link(rel="stylesheet", href="src/style.css")
+
+        script(src="src/script.js" defer type="module") 
+    body 
+        
+        header.header 
+            a(href="../").header__title Where in the world?
+            .header__mode 
+                    picture.header__picture 
+                        img(src="../assets/dark.svg", alt="mode icon").header__icon
+                    span.header__mode-text Dark mode
+
+
+        
+        .main
+            a(href="../").link
+                button.back
+                    picture.back__picture
+                        include svg/back.pug
+                    span.back__span Back 
+                
+            .content
+        

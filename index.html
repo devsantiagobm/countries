@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class="notranslate" lang="en" translate="no">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <title>Countries App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+    <script src="src/script.js" defer type="module"> </script>
+  </head>
+  <body> 
+    <div class="modal"> <span class="loader loader--modal"></span></div>
+    <div class="mensaje">Country not found</div>
+    <header class="header"> <a class="header__title" href="#">Where in the world?</a>
+      <div class="header__mode"> 
+        <picture class="header__picture"> <img class="header__icon" src="assets/dark.svg" alt="mode icon"></picture><span class="header__mode-text">Dark mode</span>
+      </div>
+    </header>
+    <main class="main"> 
+      <form class="form" action="#" method="GET">
+        <label class="form__label" for="country">
+          <picture class="form__picture"> <svg class="form__icon" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 612.01 612.01" style="enable-background:new 0 0 512 512" xml:space="preserve"><g>
+<g xmlns="http://www.w3.org/2000/svg">
+<g id="_x34__4_">
+<g>
+<path d="M606.209,578.714L448.198,423.228C489.576,378.272,515,318.817,515,253.393C514.98,113.439,399.704,0,257.493,0     C115.282,0,0.006,113.439,0.006,253.393s115.276,253.393,257.487,253.393c61.445,0,117.801-21.253,162.068-56.586     l158.624,156.099c7.729,7.614,20.277,7.614,28.006,0C613.938,598.686,613.938,586.328,606.209,578.714z M257.493,467.8     c-120.326,0-217.869-95.993-217.869-214.407S137.167,38.986,257.493,38.986c120.327,0,217.869,95.993,217.869,214.407     S377.82,467.8,257.493,467.8z" style="fill: var(--text)" data-original="#000000"></path>
+</g>
+</g>
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+<g xmlns="http://www.w3.org/2000/svg">
+</g>
+</g></svg>
+          </picture>
+          <input class="form__country" type="text" id="country" name="country" placeholder="Search for a country..." autocomplete="off">
+          <div class="form__loader form__loader--search"><span class="loader"></span></div>
+        </label>
+        <div class="form__select"> 
+          <div class="form__accordion">   <span>Filter by Region </span>
+            <picture class="form__picture form__arrow"> <svg class="form__icon" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 128 128" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path xmlns="http://www.w3.org/2000/svg" id="Down_Arrow_3_" d="m64 88c-1.023 0-2.047-.391-2.828-1.172l-40-40c-1.563-1.563-1.563-4.094 0-5.656s4.094-1.563 5.656 0l37.172 37.172 37.172-37.172c1.563-1.563 4.094-1.563 5.656 0s1.563 4.094 0 5.656l-40 40c-.781.781-1.805 1.172-2.828 1.172z" style="fill: var(--text);" data-original="#000000" class=""></path></g></svg></picture>
+            <div class="form__loader form__loader--filter"><span class="loader"></span></div>
+          </div>
+          <div class="form__options">
+            <ul class="form__list">
+              <li class="form__item">Africa</li>
+              <li class="form__item">Americas</li>
+              <li class="form__item">Asia</li>
+              <li class="form__item">Europe</li>
+              <li class="form__item">Oceania</li>
+            </ul>
+          </div>
+        </div>
+      </form>
+      <div class="content">
+        <div class="content__box"> </div>
+      </div>
+      
+    </main>
+  </body>
+</html>

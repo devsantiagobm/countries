@@ -1,0 +1,14 @@
+:root{
+    --dark-background: hsl(207, 26%, 17%);
+    --dark-text:#ffffff;
+    --dark-elements: hsl(209, 23%, 22%);
+
+    --light-background: hsl(207, 26%, 90%);
+    --light-text: hsl(200, 15%, 8%);
+    --light-elements: hsl(209, 23%, 95%);
+
+
+    --background: var(--dark-background);
+    --text: var(--dark-text);
+    --elements: var(--dark-elements);
+}
