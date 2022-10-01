@@ -82,7 +82,7 @@ class UI {
             const nombre = pais.name.common;
             const box = document.createElement('a')
             const span = document.createElement("span")
-            box.href = `../country/?country=${nombre}`
+            box.href = `../country/?country=${nombre}?fullText=true`
             box.classList.add("content__item")
             span.textContent = nombre;
             box.appendChild(span)
